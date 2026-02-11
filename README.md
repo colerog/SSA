@@ -2,24 +2,24 @@
 > This project is currently early in development and features and information may not be accurate
 
 
-# **SSA Macro
+# **SSA Macro**
 A macro for Bee Swarm Simulator focused on farming star signs.
 
-## **Features
+## **Features**
 Add in feautres here
 
-## **Downloads
+## **Downloads**
 Once we release we can add it in here
 
-## **Credits
+## **Credits**
 
-### **Developers
+### **Developers**
 Youngcat2000 (@colerog)
 TheFinalNight0 (@InformationDenier)
 
-### **Contributors
+### **Contributors**
 Currently empty
 
-### **Inspiration
+### **Inspiration**
 We were heavily inspired by [Natro Macro](https://github.com/NatroTeam/NatroMacro) and all their hard work.
 
