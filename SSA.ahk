@@ -17,12 +17,8 @@
  Gui, SSA:New, AlwaysOnTop -Caption, SSA
  titleLoadWidth := guiWidth/1.5
  titleLoadHeight := guiHeight/1.5
- Gui, Add, Text, w%titleLoadWidth% h%titleLoadHeight% Center, THE SSA
  Gui, Show,w%guiWidth% h%guiHeight%
  
- 
- 
  return
- 
  
  ^x::ExitApp
