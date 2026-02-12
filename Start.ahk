@@ -58,21 +58,65 @@ if (optimized == "No"){
     } else if (depen == 2){
         ; Missing Ahk 32
         Msgbox, "You are missing AHK 32 in your dependencies folder"
-        Msgbox, "Please reinstall AHK 32 into the dependecies folder" ; Add in updating and reinstalling for user ease [TODO]
+        MsgBox, "Attempting to download AHK 32 into your dependecies folder"
+        FileUrl := "https://github.com/colerog/SSA//dependencies/AutoHotkey32.exe"
+        SavePath := "%A_ScriptDir%\..\dependencies\AutoHotkey32.exe"
+        UrlDownloadToFile, %FileUrl%, %SavePath%
+        if (FileExist("%A_ScriptDir%\..\dependencies\AutoHotkey32.exe")){
+            MsgBox, "Succesfully installed AHK 32 into your dependencies folder"
+            MsgBox, "Restarting SSA now"
+            Reload
+        } else{
+            MsgBox, "Failed to install AHK 32 into your dependencies folder"
+            MsgBox, "Please manually download AHK 32 and restart SSA to continue"
+            ExitApp
+        }
         ExitApp()
     } else if (depen == 1){
         ; Missing Ahk 64
         Msgbox, "You are missing AHK 64 in your dependencies folder"
-        Msgbox, "Please reinstall AHK 64 into the dependecies folder" ; Add in updating and reinstalling for user ease [TODO]
-        ExitApp()
+        MsgBox, "Attempting to download AHK 64 into your dependecies folder"
+        FileUrl := "https://github.com/colerog/SSA//dependencies/AutoHotkey64.exe"
+        SavePath := "%A_ScriptDir%\..\dependencies\AutoHotkey64.exe"
+        UrlDownloadToFile, %FileUrl%, %SavePath%
+        if (FileExist("%A_ScriptDir%\..\dependencies\AutoHotkey64.exe")){
+            MsgBox, "Succesfully installed AHK 64 into your dependencies folder"
+            MsgBox, "Restarting SSA now"
+            Reload
+        } else{
+            MsgBox, "Failed to install AHK 64 into your dependencies folder"
+            MsgBox, "Please manually download AHK 64 and restart SSA to continue"
+            ExitApp
+        }
     } else {
         ; Missing both
         Msgbox, "You are missing both versions of AHK in your dependencies folder"
-        Msgbox, "Please reinstall both into the dependecies folder" ; Add in updating and reinstalling for user ease [TODO]
-        ExitApp()
+        MsgBox, "Attempting to download AHK 64 into your dependecies folder"
+        FileUrl := "https://github.com/colerog/SSA//dependencies/AutoHotkey64.exe"
+        SavePath := "%A_ScriptDir%\..\dependencies\AutoHotkey64.exe"
+        MsgBox, "Attempting to download AHK 32 into your dependecies folder"
+        FileUrl := "https://github.com/colerog/SSA//dependencies/AutoHotkey64.exe"
+        SavePath := "%A_ScriptDir%\..\dependencies\AutoHotkey64.exe"
+        UrlDownloadToFile, %FileUrl%, %SavePath%
+        if (FileExist("%A_ScriptDir%\..\dependencies\AutoHotkey64.exe")){
+            MsgBox, "Succesfully installed AHK 64 into your dependencies folder"
+            if (FileExist("%A_ScriptDir%\..\dependencies\AutoHotkey32.exe")){
+                MsgBox, "Succesfully installed AHK 32 into your dependencies folder"
+                MsgBox, "Restarting SSA now"
+                Reload
+            } else {
+                MsgBox, "Failed to install AHK 32 into your dependencies folder"
+                MsgBox, "Please manually download AHK 32 and restart SSA to continue"
+                ExitApp
+            }
+        } else{
+            MsgBox, "Failed to install AHK 64 into your dependencies folder"
+            MsgBox, "Please manually download AHK 64 and restart SSA to continue"
+            ExitApp
+        }
+        ExitApp
     }
 }
-
 
 ; Gui Creation
 SysGet, monitorCount, MonitorCount
