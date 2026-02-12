@@ -1,0 +1,3 @@
+These are settings, please do not manually change anything if you do not know what you are doing, thank you.
+Theme:Dark:Optimized:No:AutoInstall:No:AutoStart:No
+Discord:No:DiscordWebhook:N/A:SendScreenShots:No:SendHPH:No:SendHourly:No
