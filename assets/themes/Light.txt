@@ -1,0 +1,6 @@
+White Theme
+Make your own themes with html color codes and different options (Keep all these lines, only edit any line with a color code on it or font name)
+Main color:
+FFFFFF
+Font:
+Empty for now

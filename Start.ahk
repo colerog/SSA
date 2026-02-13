@@ -1,5 +1,5 @@
 /*
-SSA v0.0.1
+SSA v0.2.4
 
 Created by colerog & InformationDenier
 Repository: https://github.com/colerog/SSA_Macro
@@ -148,7 +148,7 @@ if (discord == "Yes" && discordWebhook != "N/A"){
         While, check != True
             random, numberCheck 1000000,9999999
 
-    
+
             ; Add in sending message here
             MsgBox, 4, "Discord Integration","Does the code below line up with the discord code:" . `n numberCheck 
 
@@ -186,11 +186,8 @@ guiHeight := (primMonRight - primMonLeft)/8
 Gui, SSA:New, AlwaysOnTop -Caption, SSA
 
 ; Adds in theme colors
-if (theme == "Dark"){
-    Gui, Color, 1e1e1e
-} else if (theme == "Light"){
-    Gui, Color, FFFFFF
-}
+FileReadLine, themeMainColor, %A_ScriptDir%\..\assets\themes\%theme%.txt, LineNum
+Gui, Color, %themeMainColor%
 titleLoadWidth := guiWidth/1.5
 titleLoadHeight := guiHeight/1.5
 Gui, Show,w%guiWidth% h%guiHeight%
