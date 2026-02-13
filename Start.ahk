@@ -9,7 +9,7 @@ Repository: https://github.com/colerog/SSA_Macro
 #SingleInstance Force
 
 ; Libraries and data
-#Include "%A_ScriptDir%\..\libraries"
+#Include "A_ScriptDir\..\libraries"
 #Include "DependencyChecker.ahk"
 #Include "A_ScriptDir%\..\data"
 
@@ -63,9 +63,9 @@ if (optimized == "No"){
         if (autoInstall == "Yes"){
             MsgBox, "Attempting to download AHK 32 into your dependecies folder"
             FileUrl := "https://github.com/colerog/SSA//dependencies/AutoHotkey32.exe"
-            SavePath := "%A_ScriptDir%\..\dependencies\AutoHotkey32.exe"
+            SavePath := "A_ScriptDir\..\dependencies\AutoHotkey32.exe"
             UrlDownloadToFile, %FileUrl%, %SavePath%
-            if (FileExist("%A_ScriptDir%\..\dependencies\AutoHotkey32.exe")){
+            if (FileExist("A_ScriptDir\..\dependencies\AutoHotkey32.exe")){
                 MsgBox, "Succesfully installed AHK 32 into your dependencies folder"
                 MsgBox, "Restarting SSA now"
                 Reload
@@ -84,9 +84,9 @@ if (optimized == "No"){
         if (autoInstall == "Yes"){
             MsgBox, "Attempting to download AHK 64 into your dependecies folder"
             FileUrl := "https://github.com/colerog/SSA//dependencies/AutoHotkey64.exe"
-            SavePath := "%A_ScriptDir%\..\dependencies\AutoHotkey64.exe"
+            SavePath := "A_ScriptDir\..\dependencies\AutoHotkey64.exe"
             UrlDownloadToFile, %FileUrl%, %SavePath%
-            if (FileExist("%A_ScriptDir%\..\dependencies\AutoHotkey64.exe")){
+            if (FileExist("A_ScriptDir\..\dependencies\AutoHotkey64.exe")){
                 MsgBox, "Succesfully installed AHK 64 into your dependencies folder"
                 MsgBox, "Restarting SSA now"
                 Reload
@@ -105,15 +105,15 @@ if (optimized == "No"){
         if (autoInstall == "Yes"){
             MsgBox, "Attempting to download AHK 64 into your dependecies folder"
             FileUrl := "https://github.com/colerog/SSA//dependencies/AutoHotkey64.exe"
-            SavePath := "%A_ScriptDir%\..\dependencies\AutoHotkey64.exe"
+            SavePath := "A_ScriptDir\..\dependencies\AutoHotkey64.exe"
             UrlDownloadToFile, %FileUrl%, %SavePath%
             MsgBox, "Attempting to download AHK 32 into your dependecies folder"
             FileUrl := "https://github.com/colerog/SSA//dependencies/AutoHotkey64.exe"
-            SavePath := "%A_ScriptDir%\..\dependencies\AutoHotkey64.exe"
+            SavePath := "A_ScriptDir\..\dependencies\AutoHotkey64.exe"
             UrlDownloadToFile, %FileUrl%, %SavePath%
-            if (FileExist("%A_ScriptDir%\..\dependencies\AutoHotkey64.exe")){
+            if (FileExist("A_ScriptDir\..\dependencies\AutoHotkey64.exe")){
                 MsgBox, "Succesfully installed AHK 64 into your dependencies folder"
-                if (FileExist("%A_ScriptDir%\..\dependencies\AutoHotkey32.exe")){
+                if (FileExist("A_ScriptDir\..\dependencies\AutoHotkey32.exe")){
                     MsgBox, "Succesfully installed AHK 32 into your dependencies folder"
                     MsgBox, "Restarting SSA now"
                     Reload
@@ -123,7 +123,7 @@ if (optimized == "No"){
                     ExitApp
                 }
             } else{
-                if (FileExist("%A_ScriptDir%\..\dependencies\AutoHotkey32.exe")){
+                if (FileExist("A_ScriptDir\..\dependencies\AutoHotkey32.exe")){
                     MsgBox, "Failed to install AHK 64 into your dependencies folder"
                     MsgBox, "Succesfully installed AHK 32 into your dependencies folder"
                     MsgBox, "Please manually download AHK 64 and restart SSA to continue"
@@ -186,7 +186,7 @@ guiHeight := (primMonRight - primMonLeft)/8
 Gui, SSA:New, AlwaysOnTop -Caption, SSA
 
 ; Adds in theme colors
-FileReadLine, themeMainColor, %A_ScriptDir%\..\assets\themes\%theme%.txt, LineNum
+FileReadLine, themeMainColor, "A_ScriptDir\..\assets\themes\" . %theme% . ".txt", 4
 Gui, Color, %themeMainColor%
 titleLoadWidth := guiWidth/1.5
 titleLoadHeight := guiHeight/1.5
