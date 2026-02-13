@@ -1,5 +1,5 @@
 > [!WARNING]
-> This project is currently early in development and features and information may not be accurate
+> This project is currently early in development and features and information may not be accurate or complete
 
 
 # **SSA Macro**
@@ -21,22 +21,22 @@ Automatically will see if your version of SSA is up to date and if not it prompt
 
 
 ### **MORE TO COME!!!**
-Check out issues for what feautures we are currently working on.
+Check out [issues](https://github.com/colerog/SSA/issues) for what feautures we are currently working on.
 
 
 ## **Downloads**
-Once we release we can add it in here.
+No current releases.
 
 
 ## **Credits**
 
 ### **Developers**
-Youngcat2000 (@colerog)
-TheFinalNight0 (@InformationDenier)
+@colerog (Youngcat2000)
+@InformationDenier (TheFinalNight0)
 
 
 ### **Contributors**
-Currently empty
+Currently there are no contributors
 
 
 ### **Inspiration**

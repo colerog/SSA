@@ -141,12 +141,17 @@ if (optimized == "No"){
 
 ; Discord Integration
 if (discord == "Yes" && discordWebhook != "N/A"){
+
+    ; Check for wifi connection here
     if (optimized == "No"){
         random, numberCheck 1000000,9999999
 
         ; Add in sending message here
 
         MsgBox, 4, "Discord Integration","Does the code below line up with the discord code:" . `n numberCheck 
+    } else {
+
+        ; Send a message in discord saying connected
     }
 }
 
@@ -174,6 +179,7 @@ if (theme == "Dark"){
 titleLoadWidth := guiWidth/1.5
 titleLoadHeight := guiHeight/1.5
 Gui, Show,w%guiWidth% h%guiHeight%
+
 
 return
 
