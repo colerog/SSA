@@ -243,7 +243,8 @@ Gui, Color, %themeMainColor%
 Gui, Show,w%guiWidth% h%guiHeight%
 
 ; Adds rounded corners
-WinGet, hwnd, ID, A
+Gui, SSA:+LastFound
+hwnd := WinExist()
 radius := 25
 hRgn := DllCall("gdi32\CreateRoundRectRgn"
     , "Int", 0
@@ -255,10 +256,16 @@ hRgn := DllCall("gdi32\CreateRoundRectRgn"
     , "Ptr")
 
 DllCall("user32\SetWindowRgn", "Ptr", hwnd, "Ptr", hRgn, "Int", true)
-iconsize := 32  
-hIcon := LoadPicture("My Icon.ico", "Icon1 w" iconsize " h" iconsize, imgtype)
-Gui +LastFound
-SendMessage 0x0080, 1, hIcon
+iconsize := 32
+icoPath := A_ScriptDir "\assets\icons\StarIcon.ico"
+hIcon := LoadPicture(icoPath, "Icon1 w" iconsize " h" iconsize " HICON:", imgType)
+if (!hIcon) {
+    MsgBox, 16, Icon Error, Failed to load icon:`n%icoPath%
+} else {
+    SendMessage, 0x80, 0, hIcon,, ahk_id %hwnd%
+    SendMessage, 0x80, 1, hIcon,, ahk_id %hwnd%
+}
+
 return
 
 GuiClose:
