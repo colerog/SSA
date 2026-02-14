@@ -17,7 +17,7 @@ Repository: https://github.com/colerog/SSA_Macro
 if (FileExist("Settings.txt")){
     #Include "Settings.txt"
 } else {
-    FileAppend, These are settings, please do not manually change anything if you do not know what you are doing, thank you.`nTheme:Dark:Optimized:No:AutoInstall:No:AutoStart:No`nDiscord:No:DiscordWebhook:N/A:SendScreenShots:No:SendHPH:No:SendHourly:No, Settings.txt
+    FileAppend, "These are settings, please do not manually change anything if you do not know what you are doing, thank you."`n"Theme:Dark:Optimized:No:AutoInstall:No:AutoStart:No`nDiscord:No:DiscordWebhook:N/A:SendScreenShots:No:SendHPH:No:SendHourly:No", Settings.txt
     #Include "Settings.txt"
 }
 
